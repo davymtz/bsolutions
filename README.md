@@ -13,7 +13,7 @@ git clone https://github.com/davymtz/bsolutions.git b_solutions
 Una vez descargado, procederemos a ejecutar los siguientes comandos:
 
 ```bash
-cd b_solutions && sh run_projects.sh
+cd b_solutions && sh run_project.sh
 ```
 Para validar que los contenedores se crearon y levantaron bien, podremos verificarlo con este comando:
 ```bash
