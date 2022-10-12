@@ -3,7 +3,7 @@ version: "3.9"
 services:
   mysql:
     container_name: db_service
-    image: mysql:bsolutions
+    image: mysql
     security_opt:
       - seccomp:unconfined
     volumes:
