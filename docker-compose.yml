@@ -3,7 +3,7 @@ version: "3.9"
 services:
   mysql:
     container_name: db_service
-    image: mysql
+    image: mysql:bsolutions
     security_opt:
       - seccomp:unconfined
     volumes:
@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: ./apache.Dockerfile
     container_name: apache_service
-    image: bsolutions
+    image: web:bsolutions
     volumes:
       - ./project:/var/www/html/
     ports:

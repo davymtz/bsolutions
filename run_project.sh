@@ -1,6 +1,8 @@
 #!/bin/bash
+echo "Schell Script ejecutadose..."
 
 # Crear carpeta donde se alojarán los binarios de mysql
+echo "Creando carpeta para gestionar BD..."
 DIRECTORIO=/mysql
 
 if [ -d "$DIRECTORIO" ]
@@ -10,5 +12,15 @@ else
     mkdir ./mysql/
 fi
 
+echo "Listo"
+
 # Correr los contenedores
+echo "Levantando servidores en docker"
 docker compose up -d --build
+
+# Realizar las migraciones necesarias (restore)
+echo "Realizando migraciones..."
+cat ./backup/dump.sql | docker exec -i db_service /usr/bin/mysql -uroot -pphp_root b_solutions
+echo "Listo"
+
+echo "Schell Script ejecutado"
