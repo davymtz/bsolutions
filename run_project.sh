@@ -16,6 +16,7 @@ echo "Listo"
 
 # Correr los contenedores
 echo "Levantando servidores en docker"
+# La bandera --build solo será una vez
 docker compose up -d --build
 
 # Realizar las migraciones necesarias (restore)

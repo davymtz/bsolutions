@@ -15,10 +15,19 @@ Una vez descargado, procederemos a ejecutar los siguientes comandos:
 ```bash
 cd b_solutions && sh run_project.sh
 ```
+Si por algna razón no se ejecuta la migración, hacerlo desde la terminal manualmente:
+```bash
+cat ./backup/dump.sql | docker exec -i db_service /usr/bin/mysql -uroot -pphp_root b_solutions
+```
 Para validar que los contenedores se crearon y levantaron bien, podremos verificarlo con este comando:
 ```bash
 docker ps -a
 ```
-En la columna status aparecerá **_up_** y el tiempo del contenedor que está ejecutandose
+En la columna **status** aparecerá _Up <time executed>_ y el tiempo del contenedor que está ejecutandose
 
 Una vez que todo haya corrido bien, procederemos a entrar al navegador en esta ruta: [localhost](http://localhost)
+
+Una vez revisada la prueba ejecutar este comando para poder bajar los servidores (cerrar y eliminar contenedores)
+```bash
+docker compose down
+```
